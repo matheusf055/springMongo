@@ -5,6 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PostRepository extends MongoRepository <Post, String> { // Criando um repositorio no mongo, passando o User e o tipo do ID
-
+public interface PostRepository extends MongoRepository <Post, String> {
 }

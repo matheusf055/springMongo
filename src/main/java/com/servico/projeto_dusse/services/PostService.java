@@ -15,8 +15,11 @@ import java.util.Optional;
 @Service
 public class PostService {
 
-    @Autowired
-    private PostRepository repo;
+    private final PostRepository repo;
+
+    public PostService(PostRepository repo) {
+        this.repo = repo;
+    }
 
     public Post findById(String id) {
         Optional<Post> user = repo.findById(id);
