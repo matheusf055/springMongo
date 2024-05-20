@@ -1,5 +1,7 @@
 package com.servico.projeto_dusse.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,6 +13,8 @@ import java.util.List;
 import java.util.Objects;
 
 @Document
+@Getter
+@Setter
 public class User implements Serializable {
 
     @Serial
@@ -24,6 +28,7 @@ public class User implements Serializable {
     @DBRef(lazy = true)
     private List<Post> posts = new ArrayList<>();
 
+    //Construtores
     public User() {
     }
 
@@ -33,38 +38,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Post> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
-    }
-
+    //Hash code e equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
